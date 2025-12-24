@@ -1,0 +1,149 @@
+@import '@/styles/base';
+
+.user-info {
+  @include wmh(100vw, 100vh);
+  background-color: #fff;
+  &__header {
+    @include wh(100%, 186px);
+    display: flex;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    border-top: 2px solid #f4f4f4;
+    > view {
+      flex: 1;
+      display: flex;
+    }
+  }
+  &__avatar {
+    @include wh(126px, 126px);
+    margin-right: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__name {
+    > view:first-child {
+      @include sc(36px, rgba(56, 56, 56, 1));
+      padding: 20px 0;
+      font-weight: 600;
+    }
+    > view:last-child {
+      @include wh(138px, 30px);
+      @include sc(24px, #fff);
+      line-height: 30px;
+      text-align: center;
+      background-color: rgba(246, 193, 191, 1);
+      border-radius: 16px;
+    }
+  }
+  &__score {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    > view {
+      height: 60px;
+      line-height: 54px;
+      box-sizing: border-box;
+      padding: 0 16px;
+      border: 2px solid rgba(195, 195, 195, 1);
+      text-align: center;
+      border-radius: 30px;
+      > text {
+        @include sc(24px, rgba(51, 51, 51, 1));
+        margin-left: 20px;
+      }
+    }
+  }
+  &__coupon {
+    padding: 0 20px;
+    > view {
+      @include wh(100%, 88px);
+      line-height: 88px;
+      box-sizing: border-box;
+      padding: 0 50px;
+      background: url('../../../assets/bg.png') no-repeat;
+      background-size: cover;
+    }
+  }
+  &__coupon-label {
+    @include sc(30px, rgba(250, 222, 190, 1));
+  }
+  &__coupon-num {
+    > view {
+      @include wh(128px, 48px);
+      @include sc(30px, rgba(70, 65, 83, 1));
+      display: inline-block;
+      line-height: 48px;
+      margin: 24px 10px 0 0;
+      text-align: center;
+      background-color: rgba(255, 226, 192, 1);
+      border-radius: 24px;
+    }
+  }
+  &__orders {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    border-bottom: 20px solid #f4f4f4;
+    > view:first-child {
+      @include sc(32px, rgba(51, 51, 51, 1));
+      padding-bottom: 30px;
+    }
+  }
+  &__order-category {
+    display: flex;
+    > view {
+      position: relative;
+      flex: 1;
+      text-align: center;
+      > view:nth-of-type(2) {
+        @include sc(26px, rgba(51, 51, 51, 1));
+      }
+    }
+    .badge {
+      @include wh(30px, 30px);
+      position: absolute;
+      right: 58px;
+      top: -6px;
+      z-index: 1;
+      line-height: 30px;
+      color: #ff4949 !important;
+      font-size: 20px;
+      text-align: center;
+      overflow: hidden;
+      background-color: #fff;
+      border: 2px solid #ff4949;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px 0 rgba(233, 59, 61, 0.2);
+    }
+    .order-icon1 {
+      @include wh(46px, 52px);
+    }
+    .order-icon2 {
+      @include wh(52px, 56px);
+    }
+    .order-icon3 {
+      @include wh(58px, 50px);
+    }
+    .order-icon4 {
+      @include wh(56px, 56px);
+    }
+  }
+  .info-list {
+    border-bottom: 20px solid #f4f4f4;
+    > view {
+      @include sc(30px, rgba(51, 51, 51, 1));
+      height: 96px;
+      line-height: 96px;
+      box-sizing: border-box;
+      padding: 0 20px;
+      border-bottom: 2px solid #ebebeb;
+      > text {
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      .ver-icon {
+        vertical-align: middle;
+      }
+    }
+  }
+}

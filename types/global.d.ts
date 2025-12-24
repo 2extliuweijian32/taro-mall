@@ -26,4 +26,12 @@ declare namespace NodeJS {
   }
 }
 
+declare namespace Taro {
+  interface TaroStatic {
+    baseUrl: string
+  }
+}
+
+
+
 

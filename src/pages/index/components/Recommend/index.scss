@@ -1,0 +1,51 @@
+@import '@/styles/base';
+
+.recommend {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 20px 0;
+  background-color: #fff;
+  &__header {
+    @include sc(36px, #999);
+    padding-bottom: 24px;
+    font-weight: 600;
+    text-align: center;
+    > text {
+      padding: 0 20px;
+    }
+  }
+  &__goods {
+    &-item {
+      width: 100%;
+      padding: 12px 0;
+      border-bottom: 2px solid #f4f4f4;
+      box-sizing: border-box;
+      display: flex;
+    }
+    &-cover {
+      @include wh(180px, 180px);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    &-info {
+      padding: 0 10px;
+      box-sizing: border-box;
+      background-color: #fff;
+      flex: 1;
+      min-width: 1px;
+    }
+    &-name {
+      @include sc(28px, rgba(51, 51, 51, 1));
+    }
+    &-price {
+      @include sc(32px, rgba(232, 14, 39, 1));
+      height: 60px;
+      line-height: 60px;
+    }
+    &-sales {
+      @include sc(28px, rgba(153, 153, 153, 1));
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+}
