@@ -1,0 +1,109 @@
+import React, { useState } from 'react';
+import Taro, { useDidHide } from '@tarojs/taro';
+import { View, Textarea, Text } from '@tarojs/components';
+
+import { isNotNull } from '@/utils/util';
+import { wxToast } from '@/utils/wxApi';
+
+import Upload from '@/components/Upload/index';
+import Loading from '@/components/Loading/index';
+import './index.scss';
+
+function Suggestion() {
+  const [formData, setFormData] = useState({
+    suggestionVal: '',
+    imgList: [],
+  });
+  const [loading, setLoading] = useState(false);
+
+  /**
+   * @desc 输入框 onChange 事件
+   * @param { object } e
+   * @param { string } sign
+   * @return { void }
+   */
+  const handleInputChange = (e, sign) => {
+    setFormData({
+      ...formData,
+      [sign]: e?.target?.value,
+    });
+  };
+
+  /**
+   * @desc 上传图片回调
+   * @param { object[] } imgList
+   * @return { void }
+   */
+  const onUploadCall = (imgList) => {
+    setFormData({
+      ...formData,
+      imgList,
+    });
+  };
+
+  /**
+   * @desc 检测输入框值是否为空
+   * @param { string } inputVal
+   * @param { string } toastTxt
+   * @return { boolean }
+   */
+  const checkInputVal = (inputVal, toastTxt) => {
+    if (!isNotNull(inputVal)) {
+      wxToast(toastTxt, 'close-circle');
+      return true;
+    }
+  };
+
+  /**
+   * @desc 提交
+   * @return { void }
+   */
+  const handleSubmit = async () => {
+    if (checkInputVal(formData.suggestionVal, '请输入反馈建议')) {
+      return;
+    }
+    wxToast('提交成功', 'check-circle');
+    setTimeout(() => {
+      Taro.navigateBack();
+    }, 2000);
+  };
+
+  useDidHide(() => {
+    setFormData({
+      suggestionVal: '',
+      imgList: [],
+    });
+  });
+
+  return (
+    <View className="suggestion">
+      <View className="content">
+        <Textarea
+          className="textarea"
+          placeholder="请输入反馈建议，以便我们提供更优质的服务"
+          maxlength="500"
+          onInput={(e) => handleInputChange(e, 'suggestionVal')}
+        />
+        <View className="counter">
+          {formData.suggestionVal.length}/
+          <Text style={{ color: formData.suggestionVal.length > 500 ? '#f00' : '#666' }}>500</Text>
+        </View>
+      </View>
+
+      <View className="uploader">
+        <View className="uploader__tip">您最多可上传5张，单张图片最大1M</View>
+        <View className="uploader__selector">
+          <Upload onUploadCall={onUploadCall} imgList={formData.imgList} />
+        </View>
+      </View>
+
+      <View className="submit-btn" onClick={handleSubmit}>
+        提交
+      </View>
+
+      <Loading isLoading={loading} />
+    </View>
+  );
+}
+
+export default Suggestion;

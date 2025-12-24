@@ -1,0 +1,74 @@
+@import '@/styles/base';
+
+.order-list {
+  @include wmh(100vw, 100vh);
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 24px;
+  background-color: rgba(242, 242, 242, 1);
+  .tabs-header {
+    @include wh(100%, 88px);
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: #fff;
+    > view {
+      flex: 1;
+      font-size: 32px;
+      text-align: center;
+      > text {
+        @include wh(120px, 88px);
+        display: inline-block;
+        line-height: 88px;
+      }
+    }
+    &__item {
+      @include sc(26px, #999);
+    }
+    &__item--active {
+      @include sc(30px, #e80e27);
+      font-weight: 600;
+      border-bottom: 4px solid #e80e27;
+    }
+  }
+  .tabs-content__item {
+    position: relative;
+    width: 690px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 24px;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px 2px rgba(181, 181, 181, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .order-status {
+    @include sc(32px, #e80e27);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px dashed #dbdbdb;
+    > text {
+      font-size: 28px;
+    }
+  }
+  .goods-info {
+    @include sc(28px, #999);
+    padding: 10px 0;
+  }
+  .goods-cover {
+    @include wh(80px, 80px);
+    margin-right: 10px;
+  }
+  .goods-info:nth-of-type(2) {
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #dbdbdb;
+  }
+  .goods-info:last-child {
+    float: right;
+    > text {
+      margin-left: 20px;
+    }
+  }
+}

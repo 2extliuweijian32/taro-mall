@@ -1,0 +1,166 @@
+@import '@/styles/base';
+
+.goods {
+  @include wmh(100vw, 100vh);
+  padding-bottom: 98px;
+  background-color: #f4f4f4;
+}
+
+.banner {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+}
+
+.info {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  .name {
+    margin-bottom: 60px;
+    @include sc(30px, rgba(51, 51, 51, 1));
+  }
+  .price {
+    display: inline-block;
+    margin-bottom: 8px;
+    &--current {
+      @include sc(32px, rgba(232, 14, 39, 1));
+      display: inline-block;
+      margin-right: 16px;
+    }
+    &--before {
+      @include sc(28px, rgba(153, 153, 153, 1));
+      position: relative;
+      text-decoration: line-through;
+    }
+  }
+  .stock {
+    @include sc(28px, rgba(153, 153, 153, 1));
+    > text:first-child {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+}
+
+.cart {
+  height: 110px;
+  line-height: 110px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  .total-money {
+    display: inline-block;
+    @include sc(28px, rgba(153, 153, 153, 1));
+    > text {
+      @include sc(32px, #e80e27);
+      font-size: 32px;
+    }
+  }
+  .btn-group {
+    display: flex;
+    align-items: center;
+    > view {
+      flex: 1;
+    }
+  }
+  .total-num {
+    @include sc(30px, rgba(51, 51, 51, 1));
+    margin: 0 20px;
+  }
+}
+
+.tabs {
+  &-header {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    > view {
+      flex: 1;
+      font-size: 32px;
+      text-align: center;
+      > text {
+        @include wh(120px, 88px);
+        display: inline-block;
+        line-height: 88px;
+      }
+    }
+    &__item {
+      @include sc(26px, #999);
+    }
+    &__item--active {
+      @include sc(30px, #e80e27);
+      font-weight: 600;
+      box-sizing: border-box;
+      border-bottom: 4px solid #e80e27;
+    }
+  }
+  &-content {
+    width: 100%;
+    > image {
+      width: 100%;
+    }
+  }
+}
+
+.footer {
+  @include wh(100%, 98px);
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  .icons {
+    display: flex;
+    align-items: center;
+    width: 348px;
+    .icon {
+      position: relative;
+      flex: 1;
+      text-align: center;
+      .name {
+        @include sc(24px, #666);
+      }
+    }
+    .badge {
+      @include sc(20px, #fff);
+      position: absolute;
+      right: 14px;
+      top: -2px;
+      z-index: 1;
+      height: 22px;
+      line-height: 22px;
+      padding: 0 10px;
+      border-radius: 14px 0;
+      text-align: center;
+      background-color: #ff4949;
+      box-shadow: 0 4px 8px 0 rgba(233, 59, 61, 0.2);
+      overflow: hidden;
+    }
+  }
+  .btn-group {
+    @include wh(376px, 66px);
+    display: flex;
+    line-height: 66px;
+    margin: 18px 0;
+    border-radius: 34px;
+    overflow: hidden;
+    .cart-btn {
+      @include sc(28px, #fff);
+      flex: 1;
+      text-align: center;
+      background-color: #ffa700;
+    }
+    .pay-btn {
+      @include sc(28px, #fff);
+      flex: 1;
+      padding: 0;
+      line-height: 66px;
+      border-radius: 0;
+      background-color: #e80e27;
+    }
+  }
+}

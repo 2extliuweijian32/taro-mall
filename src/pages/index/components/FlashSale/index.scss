@@ -1,0 +1,72 @@
+@import '@/styles/base';
+
+.flash-sale {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  &__header {
+    @include sc(36px, #000);
+    padding-bottom: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__more {
+    @include sc(28px, #999);
+    padding-right: 12px;
+    font-weight: 400;
+  }
+  &__banner {
+    @include wh(466px, 264px);
+    margin: 0 20px 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  &__goods {
+    &-item {
+      width: 224px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px 0 rgba(224, 224, 224, 0.5);
+    }
+    &-item:first-child {
+      margin-bottom: 20px;
+    }
+    &-item:nth-of-type(2),
+    &-item:nth-of-type(3) {
+      margin-right: 19px;
+    }
+    &-info {
+      @include wh(224px, 180px);
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    &-name {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      @include sc(24px, #fff);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-intro {
+      box-sizing: border-box;
+      padding: 6px 20px;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+    &-price {
+      @include sc(32px, rgba(232, 14, 39, 1));
+    }
+    &-sales {
+      @include sc(28px, rgba(153, 153, 153, 1));
+    }
+  }
+}

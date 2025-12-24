@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
@@ -16,7 +17,15 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       828: 1.81 / 2
     },
     sourceRoot: 'src',
-    outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist',
+    outputRoot: process.env.TARO_ENV === 'ascf' ? '../ascf-project/ascf/ascf_src' : 'dist',
+    alias: {
+      '@/components': path.resolve(__dirname, '..', 'src/components'),
+      '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+      '@/services': path.resolve(__dirname, '..', 'src/services'),
+      '@/styles': path.resolve(__dirname, '..', 'src/styles'),
+      '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+      '@/hooks': path.resolve(__dirname, '..', 'src/hooks'),
+    },
     plugins: [
       "@tarojs/plugin-generator"
     ],
