@@ -71,13 +71,13 @@ function Upload(props) {
   }, [props.imgList]);
 
   return (
-    <View className="uploadWrap">
+    <View className="upload">
       {Array.isArray(imgList) &&
         imgList.map((item, index) => {
           return (
-            <View className="imgDom left" key={index.toString()}>
+            <View className="thumb left" key={index}>
               <Image src={item} />
-              <View className="cancelIcon" onClick={(e) => handleRemove(e, index)}>
+              <View className="cancel-icon" onClick={(e) => handleRemove(e, index)}>
                 <AtIcon value="close-circle" size="12" />
               </View>
             </View>
@@ -85,7 +85,7 @@ function Upload(props) {
         })}
 
       {isAddIconShow && (
-        <View className="addDom left" onClick={handleUpload}>
+        <View className="add-icon left" onClick={handleUpload}>
           <AtIcon value="add" size="30" />
         </View>
       )}

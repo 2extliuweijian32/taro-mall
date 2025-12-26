@@ -3,12 +3,11 @@ import Taro, { useDidShow } from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 import { isObj } from '@/utils/util';
-import { getAddressApi, updateInvoiceApi } from '@/services/user';
+import { getAddressApi } from '@/services/user';
 import './index.scss';
 
 function OrderHeader() {
   const [addrInfo, setAddrInfo] = useState({});
-  const [invoiceInfo, setInvoiceInfo] = useState({});
 
   /**
    * @desc 跳转页面
@@ -37,18 +36,6 @@ function OrderHeader() {
     }
   };
 
-  /**
-   * @desc 获取发票信息
-   * @return { void }
-   */
-  const fetchInvoiceInfo = async () => {
-    const res = await updateInvoiceApi();
-
-    if (res?.status === 200) {
-      setInvoiceInfo(res?.data);
-    }
-  };
-
   useDidShow(() => {
     const selectedAddr = Taro.getStorageSync('addrInfo');
     if (selectedAddr) {
@@ -56,11 +43,6 @@ function OrderHeader() {
     } else {
       // 挂载带出默认地址
       fetchAddrInfo();
-    }
-
-    // 获取发票信息
-    if (isObj(invoiceInfo) && Object.keys(invoiceInfo).length < 1) {
-      fetchInvoiceInfo();
     }
   });
 
@@ -81,11 +63,6 @@ function OrderHeader() {
           </View>
         </View>
       )}
-
-      <View className="order-invoice" onClick={() => handleRedirect('/pages/user/invoiceEdit/index')}>
-        <AtIcon prefixClass="fa" value="files-text-o" size="14" color="#999" />
-        <Text>发票信息：{invoiceInfo.company || ''}</Text>
-      </View>
     </View>
   );
 }

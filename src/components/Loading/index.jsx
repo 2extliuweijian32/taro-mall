@@ -4,7 +4,7 @@ import './index.scss';
 
 function Loading(props) {
   return (
-    <View className="loadingWrap" style={{ display: props?.isLoading ? 'block' : 'none' }}>
+    <View className="loading" style={{ display: props?.isLoading ? 'block' : 'none' }}>
       <View className="sk-circle">
         <View className="sk-circle1" />
         <View className="sk-circle2" />

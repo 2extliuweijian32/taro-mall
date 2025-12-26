@@ -17,7 +17,10 @@ function FlashSale(props) {
         }
       >
         <Text>秒杀</Text>
-        <Text className="flash-sale__more">更多</Text>
+        <View className="flash-sale__more">
+          <Text>更多</Text>
+          <View className="at-icon at-icon-chevron-right" />
+        </View>
       </View>
 
       <View className="flash-sale__banner left">

@@ -7,10 +7,10 @@ import { getUserInfoApi } from '@/services/user';
 import Loading from '@/components/Loading/index';
 import { isObj } from '@/utils/util';
 
-import orderIcon1 from '@/assets/order_icon01.png';
-import orderIcon2 from '@/assets/order_icon02.png';
-import orderIcon3 from '@/assets/order_icon03.png';
-import orderIcon4 from '@/assets/order_icon04.png';
+import allIcon from '@/assets/orders/all.png';
+import unpayIcon from '@/assets/orders/unpay.png';
+import unsendIcon from '@/assets/orders/unsend.png';
+import doneIcon from '@/assets/orders/done.png';
 
 import './index.scss';
 
@@ -105,10 +105,7 @@ function UserInfo() {
           </View>
         </View>
         <View className="user-info__score">
-          <View>
-            <AtIcon prefixClass="fa" value="vimeo" size="12" color="#e80e27" />
-            <Text>积分：{userInfo.score}</Text>
-          </View>
+          <View>积分：{userInfo.score}</View>
         </View>
       </View>
 
@@ -146,7 +143,7 @@ function UserInfo() {
               });
             }}
           >
-            <Image className="order-icon1" src={orderIcon1} />
+            <Image className="order-icon1" src={allIcon} />
             <View>全部订单</View>
           </View>
           <View
@@ -156,7 +153,7 @@ function UserInfo() {
               });
             }}
           >
-            <Image className="order-icon2" src={orderIcon2} />
+            <Image className="order-icon2" src={unpayIcon} />
             <View>待付款</View>
             <View className="badge">{userInfo.unPay}</View>
           </View>
@@ -167,7 +164,7 @@ function UserInfo() {
               });
             }}
           >
-            <Image className="order-icon3" src={orderIcon3} />
+            <Image className="order-icon3" src={unsendIcon} />
             <View>待发货</View>
             <View className="badge">{userInfo.unSend}</View>
           </View>
@@ -178,7 +175,7 @@ function UserInfo() {
               });
             }}
           >
-            <Image className="order-icon4" src={orderIcon4} />
+            <Image className="order-icon4" src={doneIcon} />
             <View>已完成</View>
           </View>
         </View>
@@ -186,33 +183,32 @@ function UserInfo() {
 
       <View className="info-list">
         <View onClick={() => handleRedirect('/pages/user/addrList/index')}>
-          <AtIcon value="map-pin" size="16" color="#999" className="ver-Icon" />
+          <AtIcon value="map-pin" size="16" color="#999" className="ver-icon" />
           <Text>收货地址</Text>
           <View className="right">
             <AtIcon value="chevron-right" size="20" color="#999" />
           </View>
         </View>
         <View onClick={() => handleRedirect('/pages/user/phoneEdit/index')}>
-          <AtIcon value="phone" size="16" color="#999" className="ver-Icon" />
+          <AtIcon value="phone" size="16" color="#999" className="ver-icon" />
           <Text>认证手机</Text>
           <View className="right">
             <AtIcon value="chevron-right" size="20" color="#999" />
           </View>
         </View>
-        <View onClick={() => handleRedirect('/pages/user/invoiceEdit/index')}>
-          <AtIcon prefixClass="fa" value="book" size="14" color="#999" className="ver-Icon" />
+        {/* <View onClick={() => handleRedirect('/pages/user/invoiceEdit/index')}>
+          <AtIcon value="bookmark" size="16" color="#999" className="ver-icon" />
           <Text>增值发票</Text>
           <View className="right">
             <AtIcon value="chevron-right" size="20" color="#999" />
           </View>
-        </View>
+        </View> */}
         <View onClick={() => handleRedirect('/pages/user/suggestion/index')}>
           <AtIcon
-            prefixClass="fa"
-            value="paper-plane-o"
+            value="bullet-list"
             size="16"
             color="#999"
-            className="ver-Icon"
+            className="ver-icon"
           />
           <Text>反馈建议</Text>
           <View className="right">

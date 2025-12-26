@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Input, Text, Image } from '@tarojs/components';
 import './index.scss';
-import arrowUp from '@/assets/arrow_up.png';
+import arrowUp from '@/assets/icons/arrow_up.png';
 
 const NO_DESC = 0b000;
 const COMPREHENSIVE_DESC = 0b001;

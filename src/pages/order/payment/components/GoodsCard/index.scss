@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .goods-card {
   width: 100%;
@@ -6,35 +6,7 @@
   padding: 20px;
   margin-bottom: 20px;
   background-color: #fff;
-  .goods {
-    padding: 20px 0;
-    border-bottom: 2px dashed #ccc;
-    display: flex;
-  }
-  .goods-cover {
-    @include wh(180px, 180px);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .goods-info {
-    height: 180px;
-    min-width: 530px;
-    box-sizing: border-box;
-    padding: 0 20px;
-    background-color: #fff;
-    flex: 1;
-  }
-  .goods-name {
-    @include sc(32px, #333);
-    height: 90px;
-  }
-  .goods-price {
-    @include sc(30px, rgba(232, 14, 39, 1));
-    display: inline-block;
-    height: 90px;
-    line-height: 90px;
-  }
-  .goods-num {
+  .goods__num {
     @include sc(30px, rgba(153, 153, 153, 1));
     height: 90px;
     line-height: 90px;

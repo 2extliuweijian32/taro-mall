@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .user-info {
   @include wmh(100vw, 100vh);
@@ -37,20 +37,16 @@
   }
   &__score {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    > view {
+    & > view {
       height: 60px;
-      line-height: 54px;
+      line-height: 60px;
       box-sizing: border-box;
       padding: 0 16px;
       border: 2px solid rgba(195, 195, 195, 1);
       text-align: center;
       border-radius: 30px;
-      > text {
-        @include sc(24px, rgba(51, 51, 51, 1));
-        margin-left: 20px;
-      }
+      @include sc(24px, rgba(51, 51, 51, 1));
     }
   }
   &__coupon {

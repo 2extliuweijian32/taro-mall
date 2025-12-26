@@ -1,5 +1,3 @@
-import { getRequest } from '@/utils/request';
-
 // 获取用户信息
 const getUserInfoApi = () => Promise.resolve({
   success: true,

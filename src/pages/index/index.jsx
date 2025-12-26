@@ -9,6 +9,7 @@ import FlashSale from './components/FlashSale/index';
 import Recommend from './components/Recommend/index';
 
 import './index.scss';
+import NoData from '@/components/NoData';
 
 function Index() {
   const [imgList, setImgList] = useState([]);

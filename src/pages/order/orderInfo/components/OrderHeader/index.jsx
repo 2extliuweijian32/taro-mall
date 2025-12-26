@@ -19,10 +19,6 @@ function OrderHeader(props) {
           {headerInfo.detailAddr}
         </View>
       </View>
-      <View className="order-invoice">
-        <AtIcon prefixClass="fa" value="files-text-o" size="14" color="#999" />
-        <Text>发票信息：{headerInfo.company}</Text>
-      </View>
     </View>
   );
 }

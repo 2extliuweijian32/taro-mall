@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .user-edit {
   @include wmh(100vw, 100vh);

@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .header {
   @include wh(100%, 172px);

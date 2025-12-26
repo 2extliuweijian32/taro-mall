@@ -7,6 +7,7 @@ import { AtIcon } from 'taro-ui';
 import Loading from '@/components/Loading/index';
 
 import './index.scss';
+import NoData from '@/components/NoData';
 
 function GoodsInfo() {
   const {
@@ -174,7 +175,9 @@ function GoodsInfo() {
           </View>
         </View>
 
-        <View className="tabs-content">暂无内容，请填写</View>
+        <View className="tabs-content">
+          <NoData isVisible />
+        </View>
       </View>
 
       <View className="footer">
