@@ -1,6 +1,6 @@
+import '@nutui/nutui-react-taro/dist/style.css';
 import Taro from '@tarojs/taro';
 import React, { Fragment } from 'react';
-import 'taro-ui/dist/style/index.scss';
 import '@/styles/base.scss';
 
 function App(props) {

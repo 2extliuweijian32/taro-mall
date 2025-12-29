@@ -42,14 +42,12 @@
     border: 2px solid #999;
     border-radius: 50%;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .checkbox--checked {
-    @include wh(46px, 46px);
-    float: left;
-    line-height: 40px;
-    margin: 28px 20px 0 0;
-    text-align: center;
-    border-radius: 50%;
+    border: 2px solid #e80e27;
     background-color: #e80e27;
   }
 }

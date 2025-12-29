@@ -19,9 +19,6 @@
     font-weight: 400;
     display: flex;
     align-items: center;
-    .at-icon {
-      font-size: 36px;
-    }
   }
   &__banner {
     @include wh(466px, 264px);

@@ -2,11 +2,12 @@
 
 .upload {
   .add-icon {
-    @include wh(118px, 116px);
-    line-height: 120px;
+    @include wh(118px, 118px);
     box-sizing: border-box;
     border: 2px solid #d8d8d8;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .thumb {
     position: relative;

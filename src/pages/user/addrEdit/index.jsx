@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Taro, { getCurrentInstance } from '@tarojs/taro';
 import { View, Text, Picker, Input } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Check } from '@nutui/icons-react-taro';
 
 import { isNotNull, isObj } from '@/utils/util';
 import { wxToast } from '@/utils/wxApi';
@@ -144,11 +144,11 @@ function AddrEdit() {
         <View className="edit-row__label left">设为默认地址：</View>
         <View className="edit-row__value left">
           <View
-            className={formData.checkedVal ? 'checkbox--checked' : 'checkbox'}
+            className={formData.checkedVal ? 'checkbox checkbox--checked' : 'checkbox'}
             onClick={(e) => handleInputChange(e, 'checkedVal')}
           >
             <View style={{ display: formData.checkedVal ? 'block' : 'none' }}>
-              <AtIcon prefixClass="fa" value="checked" size="16" color="#fff" />
+              <Check size="16" color="#fff" />
             </View>
           </View>
         </View>

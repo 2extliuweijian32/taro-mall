@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text, Image, Picker } from '@tarojs/components';
 import { wxToast } from '@/utils/wxApi';
-import { AtIcon } from 'taro-ui';
 import './index.scss';
 
 function CouponCard(props) {

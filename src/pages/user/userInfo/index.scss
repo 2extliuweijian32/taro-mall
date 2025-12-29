@@ -129,17 +129,22 @@
     > view {
       @include sc(30px, rgba(51, 51, 51, 1));
       height: 96px;
-      line-height: 96px;
       box-sizing: border-box;
       padding: 0 20px;
       border-bottom: 2px solid #ebebeb;
-      > text {
-        margin-left: 10px;
-        vertical-align: middle;
-      }
-      .ver-icon {
-        vertical-align: middle;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ver-icon {
+      margin-right: 10px;
+      vertical-align: text-top;
     }
   }
+}
+
+.dialog__footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

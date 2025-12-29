@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Taro, { useDidShow } from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
 import { isObj } from '@/utils/util';
 import { getAddressApi } from '@/services/user';
 import './index.scss';

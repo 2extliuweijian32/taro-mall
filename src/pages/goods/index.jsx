@@ -3,7 +3,7 @@ import Taro, { getCurrentInstance } from '@tarojs/taro';
 import { View, Text, Image, Button } from '@tarojs/components';
 import { getGoodsListApi } from '@/services/goods';
 
-import { AtIcon } from 'taro-ui';
+import { Home, Cart, Category, Plus, Minus } from '@nutui/icons-react-taro';
 import Loading from '@/components/Loading/index';
 
 import './index.scss';
@@ -136,13 +136,13 @@ function GoodsInfo() {
         <View className="total-money">
           合计：<Text>{totalMoney}</Text>
         </View>
-        <View className="btn-group right">
-          <View onClick={() => btnClick('sub')}>
-            <AtIcon value="subtract-circle" size="20" color="#999" />
+        <View className="btn-group">
+          <View onClick={() => btnClick('sub')} className="sub-btn">
+            <Plus size="12" color="#999" />
           </View>
-          <View className="total-num">{totalNum}</View>
-          <View onClick={() => btnClick('add')}>
-            <AtIcon value="add-circle" size="20" color="#999" />
+          <View className="num">{totalNum}</View>
+          <View onClick={() => btnClick('add')} className="add-btn">
+            <Minus size="20" color="#999" />
           </View>
         </View>
       </View>
@@ -183,9 +183,8 @@ function GoodsInfo() {
       <View className="footer">
         <View className="icons">
           <View className="icon">
-            <AtIcon
-              value="home"
-              size="21"
+            <Home
+              size="18"
               color="#666"
               onClick={() => handleRedirect('/pages/index/index', 'switchTab')}
             />
@@ -195,7 +194,7 @@ function GoodsInfo() {
             className="icon"
             onClick={() => handleRedirect('/pages/category/index', 'switchTab')}
           >
-            <AtIcon value="bullet-list" size="21" color="#666" />
+            <Category size="18" color="#666" />
             <View className="name">分类</View>
           </View>
           <View
@@ -205,7 +204,7 @@ function GoodsInfo() {
             <View className="badge" style={{ display: totalNum > 0 ? 'block' : 'none' }}>
               {totalNum}
             </View>
-            <AtIcon value="shopping-cart" size="21" color="#666" />
+            <Cart size="18" color="#666" />
             <View className="name">购物车</View>
           </View>
         </View>

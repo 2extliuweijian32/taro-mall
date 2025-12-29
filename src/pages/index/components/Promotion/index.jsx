@@ -1,8 +1,9 @@
 import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
-import './index.scss';
+import { ArrowRightSize8 } from '@nutui/icons-react-taro';
 import Goods from '@/components/Goods';
+import './index.scss';
 
 function Promotion(props) {
   const { data = {} } = props;
@@ -20,7 +21,7 @@ function Promotion(props) {
         <Text>促销</Text>
         <View className="promotion__more">
           <Text>更多</Text>
-          <View className="at-icon at-icon-chevron-right" />
+          <ArrowRightSize8 size={12} color="#999" />
         </View>
       </View>
       <View className="promotion__banner" style={{backgroundImage: `url(${data.banner})`}} />

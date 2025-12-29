@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import Taro, { useDidShow } from '@tarojs/taro';
 import { View, Text, Image, Button } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Check, Plus, Minus } from '@nutui/icons-react-taro';
 
+import Goods from '@/components/Goods';
 import Loading from '@/components/Loading/index';
 import NoData from '@/components/NoData/index';
 import './index.scss';
-import Goods from '@/components/Goods';
 
 function Cart() {
   const [goodsList, setGoodsList] = useState([]);
@@ -133,11 +133,11 @@ function Cart() {
           }}
         >
           <View
-            className={checkboxIds.includes(item.id) ? 'cart__checkbox--checked' : 'cart__checkbox'}
+            className={checkboxIds.includes(item.id) ? 'cart__checkbox cart__checkbox--checked' : 'cart__checkbox'}
             onClick={(e) => handleChecked(e, item.id)}
           >
             <View style={{ display: checkboxIds.includes(item.id) ? 'block' : 'none' }}>
-              <AtIcon value="check" size="16" color="#fff" />
+              <Check size="16" color="#fff" />
             </View>
           </View>
           <View className="cart__goods">
@@ -146,11 +146,11 @@ function Cart() {
               actions={(
                 <View className="btn-group">
                   <View className="sub-btn" onClick={(e) => handleNumChange(e, item.id, 'sub')}>
-                    <AtIcon value="subtract-circle" size="23" color="#999" />
+                    <Plus size="12" color="#999" />
                   </View>
                   <View className="num">{item.num}</View>
                   <View className="add-btn" onClick={(e) => handleNumChange(e, item.id, 'add')}>
-                    <AtIcon value="add-circle" size="23" color="#999" />
+                    <Minus size="20" color="#999" />
                   </View>
                 </View>
               )}
@@ -162,13 +162,12 @@ function Cart() {
       <View className="cart__footer">
         <View className="cart__footer__checkbox">
           <View
-            className={isCheckedAll ? 'cart__checkbox--checked' : 'cart__checkbox'}
+            className={isCheckedAll ? 'cart__checkbox cart__checkbox--checked' : 'cart__checkbox'}
             onClick={handleCheckedAll}
           >
             <View style={{ display: isCheckedAll ? 'block' : 'none' }}>
-              <AtIcon
+              <Check
                 style={{ display: isCheckedAll ? 'block' : 'none' }}
-                value="check"
                 size="16"
                 color="#fff"
               />

@@ -1,5 +1,4 @@
 import { View, Text } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
 import './index.scss';
 
 function OrderHeader(props) {

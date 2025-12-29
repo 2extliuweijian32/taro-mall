@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Close2, Plus } from '@nutui/icons-react-taro';
 import { wxToast } from '@/utils/wxApi';
 import './index.scss';
 
@@ -78,7 +78,7 @@ function Upload(props) {
             <View className="thumb left" key={index}>
               <Image src={item} />
               <View className="cancel-icon" onClick={(e) => handleRemove(e, index)}>
-                <AtIcon value="close-circle" size="12" />
+                <Close2 size={14} color="#ec1010ff" />
               </View>
             </View>
           );
@@ -86,7 +86,7 @@ function Upload(props) {
 
       {isAddIconShow && (
         <View className="add-icon left" onClick={handleUpload}>
-          <AtIcon value="add" size="30" />
+          <Plus size={30} color="#474545ff" />
         </View>
       )}
     </View>
