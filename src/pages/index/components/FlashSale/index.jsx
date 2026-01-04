@@ -25,7 +25,7 @@ function FlashSale(props) {
       </View>
 
       <View className="flash-sale__banner left">
-        <Image src={data.banner} />
+        { data.banner && <Image src={data.banner} /> }
       </View>
 
       <View className="flash-sale__goods clearfix">

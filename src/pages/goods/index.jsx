@@ -118,7 +118,7 @@ function GoodsInfo() {
 
   return (
     <View className="goods">
-      <View className="banner" style={{ backgroundImage: `url(${goodsInfo.cover})` }} />
+      <View className="banner" style={ goodsInfo.cover ? { backgroundImage: `url(${goodsInfo.cover})` } : {}} />
 
       <View className="info">
         <View className="name ellipsis">{goodsInfo.name}</View>
@@ -138,11 +138,11 @@ function GoodsInfo() {
         </View>
         <View className="btn-group">
           <View onClick={() => btnClick('sub')} className="sub-btn">
-            <Plus size="12" color="#999" />
+            <Minus size="20" color="#999" />
           </View>
           <View className="num">{totalNum}</View>
           <View onClick={() => btnClick('add')} className="add-btn">
-            <Minus size="20" color="#999" />
+            <Plus size="12" color="#999" />
           </View>
         </View>
       </View>

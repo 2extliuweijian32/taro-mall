@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Input, Text, Image } from '@tarojs/components';
+import { TriangleUp } from '@nutui/icons-react-taro';
 import './index.scss';
-import arrowUp from '@/assets/icons/arrow_up.png';
 
 const NO_DESC = 0b000;
 const COMPREHENSIVE_DESC = 0b001;
@@ -65,22 +65,22 @@ function Header(props) {
       <View className="sorting">
         <View className="sorting-item" onClick={() => handleSort(COMPREHENSIVE_DESC)}>
           <Text>综合</Text>
-          <Image
-            src={arrowUp}
+          <TriangleUp 
+            size={12}
             className={isDescending(descValue, COMPREHENSIVE_DESC) ? 'sorting--arrow-up__active' : 'sorting--arrow-up'}
           />
         </View>
         <View className="sorting-item" onClick={() => handleSort(SALES_DESC)}>
           <Text>销量</Text>
-          <Image
-            src={arrowUp}
+          <TriangleUp 
+            size={12}
             className={isDescending(descValue, SALES_DESC) ? 'sorting--arrow-up__active' : 'sorting--arrow-up'}
           />
         </View>
         <View className="sorting-item" onClick={() => handleSort(PRICE_DESC)}>
           <Text>价格</Text>
-          <Image
-            src={arrowUp}
+          <TriangleUp 
+            size={12}
             className={isDescending(descValue, PRICE_DESC) ? 'sorting--arrow-up__active' : 'sorting--arrow-up'}
           />
         </View>

@@ -24,7 +24,7 @@ function Promotion(props) {
           <ArrowRightSize8 size={12} color="#999" />
         </View>
       </View>
-      <View className="promotion__banner" style={{backgroundImage: `url(${data.banner})`}} />
+      <View className="promotion__banner" style={ data.banner ? {backgroundImage: `url(${data.banner})`} : {}} />
       <View className="promotion__goods">
         {data.goodsList?.map((item) => (
           <Goods key={item.id} data={item} size="medium" />

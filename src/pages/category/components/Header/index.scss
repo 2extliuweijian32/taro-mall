@@ -50,11 +50,9 @@
       }
     }
     &--arrow-up {
-      @include wh(16px, 12px);
       vertical-align: middle;
     }
     &--arrow-up__active {
-      @include wh(16px, 12px);
       vertical-align: middle;
       transform: rotate(180deg);
       filter: sepia(100%);
