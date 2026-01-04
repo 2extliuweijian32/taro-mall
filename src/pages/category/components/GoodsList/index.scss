@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .goods-list {
   width: 100%;
@@ -8,39 +8,5 @@
   .scroller {
     height: calc(100vh - 354px);
     overflow: auto;
-  }
-  .goods-item {
-    width: 100%;
-    padding: 12px 0;
-    box-sizing: border-box;
-    border-bottom: 2px solid #f4f4f4;
-    display: flex;
-  }
-  .goods-cover {
-    @include wh(180px, 180px);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .goods-info {
-    box-sizing: border-box;
-    padding: 0 20px;
-    background-color: #fff;
-    flex: 1;
-    min-width: 1px;
-  }
-  .goods-name {
-    height: 60px;
-    line-height: 60px;
-    @include sc(28px, rgba(51, 51, 51, 1));
-  }
-  .goods-price {
-    @include sc(32px, rgba(232, 14, 39, 1));
-    height: 60px;
-    line-height: 60px;
-  }
-  .goods-sales {
-    @include sc(28px, rgba(153, 153, 153, 1));
-    height: 60px;
-    line-height: 60px;
   }
 }

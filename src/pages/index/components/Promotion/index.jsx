@@ -1,6 +1,8 @@
 import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
+import { ArrowRightSize8 } from '@nutui/icons-react-taro';
+import Goods from '@/components/Goods';
 import './index.scss';
 
 function Promotion(props) {
@@ -17,32 +19,15 @@ function Promotion(props) {
         }
       >
         <Text>促销</Text>
-        <Text className="promotion__more">更多</Text>
+        <View className="promotion__more">
+          <Text>更多</Text>
+          <ArrowRightSize8 size={12} color="#999" />
+        </View>
       </View>
-      <View className="promotion__banner" style={{backgroundImage: `url(${data.banner})`}} />
+      <View className="promotion__banner" style={ data.banner ? {backgroundImage: `url(${data.banner})`} : {}} />
       <View className="promotion__goods">
         {data.goodsList?.map((item) => (
-          <View
-            className="promotion__goods-item"
-            key={item.id}
-            onClick={() =>
-              Taro.navigateTo({
-                url: `/pages/goods/index?id=${item.id}`,
-              })
-            }
-          >
-            <View className="promotion__goods-cover">
-              <Image src={item.cover} />
-            </View>
-            <View className="promotion__goods-info">
-              <View className="promotion__goods-name ellipsis">
-                <Text className="promotion__goods-tag">热销</Text>
-                {item.name}
-              </View>
-              <View className="promotion__goods-price">￥{item.price}</View>
-              <View className="promotion__goods-sales">销量: {item.sales}</View>
-            </View>
-          </View>
+          <Goods key={item.id} data={item} size="medium" />
         ))}
       </View>
     </View>

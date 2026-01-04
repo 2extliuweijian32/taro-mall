@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Edit, Del } from '@nutui/icons-react-taro';
 
 import { getAddressApi } from '@/services/user';
 import { wxToast } from '@/utils/wxApi';
@@ -113,10 +113,10 @@ function AddrList() {
                 {`${item.province}${item.city}${item.region}${item.detailAddr}`}
               </View>
               <View className="edit-icon" onClick={(e) => updateAddr(item.id, e)}>
-                <AtIcon value="edit" size="20" color="#666" />
+                <Edit size="18" color="#666" />
               </View>
               <View className="delete-icon" onClick={(e) => deleteAddr(e, item.id)}>
-                <AtIcon value="close-circle" size="20" color="#666" />
+                <Del size="18" color="#666" />
               </View>
             </View>
           );

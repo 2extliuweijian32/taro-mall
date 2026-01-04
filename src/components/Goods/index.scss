@@ -1,0 +1,103 @@
+@use '@/styles/base' as *;
+
+.goods-large {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #f4f4f4;
+  display: flex;
+  .goods__cover {
+    @include wh(200px, 200px);
+    border-radius: 16px;
+    background-size: contain;
+  }
+  .goods__info {
+    margin-left: 20px;
+    flex: 1;
+    min-width: 1px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .goods__name {
+    height: 72px;
+    line-height: 36px;
+    @include sc(28px, rgba(51, 51, 51, 1));
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .goods__tag {
+    @include wh(68px, 32px);
+    @include sc(24px, #fff);
+    line-height: 32px;
+    margin-right: 12px;
+    background-color: rgba(232, 14, 39, 1);
+    text-align: center;
+    border-radius: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+  .goods__info__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .goods__price {
+    @include sc(32px, rgba(232, 14, 39, 1));
+    height: 60px;
+    line-height: 60px;
+  }
+  .goods__sales {
+    @include sc(28px, rgba(153, 153, 153, 1));
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+.goods-medium {
+  width: 336px;
+  .goods__cover {
+    width: 100%;
+    padding-top: 100%;
+    background-size: contain;
+  }
+  .goods__info {
+    box-sizing: border-box;
+    padding: 12px 0;
+  }
+  .goods__name {
+    @include sc(28px, rgba(51, 51, 51, 1));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .goods__tag {
+    @include wh(68px, 32px);
+    @include sc(24px, #fff);
+    line-height: 32px;
+    margin-right: 12px;
+    background-color: rgba(232, 14, 39, 1);
+    text-align: center;
+    border-radius: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+  .goods__info__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .goods__price {
+    @include sc(32px, rgba(232, 14, 39, 1));
+  }
+  .goods__sales {
+    @include sc(28px, rgba(153, 153, 153, 1));
+  }
+}

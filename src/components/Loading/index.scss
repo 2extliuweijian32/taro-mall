@@ -1,6 +1,6 @@
-@import '../../styles/mixin';
+@use '../../styles/mixin' as *;
 
-.loadingWrap {
+.loading {
   @include wh(100vw, 100vh);
   position: absolute;
   top: 0;

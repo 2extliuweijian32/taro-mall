@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .flash-sale {
   width: 100%;
@@ -17,6 +17,8 @@
     @include sc(28px, #999);
     padding-right: 12px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
   }
   &__banner {
     @include wh(466px, 264px);
@@ -58,7 +60,7 @@
     }
     &-intro {
       box-sizing: border-box;
-      padding: 6px 20px;
+      padding: 6px 10px;
       border-radius: 10px;
       background-color: #fff;
     }

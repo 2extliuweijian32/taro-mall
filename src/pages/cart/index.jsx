@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import Taro, { useDidShow } from '@tarojs/taro';
 import { View, Text, Image, Button } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Check, Plus, Minus } from '@nutui/icons-react-taro';
 
+import Goods from '@/components/Goods';
 import Loading from '@/components/Loading/index';
 import NoData from '@/components/NoData/index';
 import './index.scss';
@@ -132,55 +133,53 @@ function Cart() {
           }}
         >
           <View
-            style={{ margin: '28px 10px 0' }}
-            className={checkboxIds.includes(item.id) ? 'cart__checkbox--checked' : 'cart__checkbox'}
+            className={checkboxIds.includes(item.id) ? 'cart__checkbox cart__checkbox--checked' : 'cart__checkbox'}
             onClick={(e) => handleChecked(e, item.id)}
           >
             <View style={{ display: checkboxIds.includes(item.id) ? 'block' : 'none' }}>
-              <AtIcon prefixClass="fa" value="checked" size="16" color="#fff" />
+              <Check size="16" color="#fff" />
             </View>
           </View>
-          <View className="goods-cover">
-            <Image src={item.cover} />
-          </View>
-          <View className="goods-info">
-            <View className="ellipsis">{item.name}</View>
-            <View>￥{item.price}</View>
-          </View>
-          <View className="btn-group">
-            <View className="sub-btn" onClick={(e) => handleNumChange(e, item.id, 'sub')}>
-              <AtIcon value="subtract-circle" size="23" color="#999" />
-            </View>
-            <View className="num">{item.num}</View>
-            <View className="add-btn" onClick={(e) => handleNumChange(e, item.id, 'add')}>
-              <AtIcon value="add-circle" size="23" color="#999" />
-            </View>
+          <View className="cart__goods">
+            <Goods 
+              data={item}
+              actions={(
+                <View className="btn-group">
+                  <View className="sub-btn" onClick={(e) => handleNumChange(e, item.id, 'sub')}>
+                    <Plus size="12" color="#999" />
+                  </View>
+                  <View className="num">{item.num}</View>
+                  <View className="add-btn" onClick={(e) => handleNumChange(e, item.id, 'add')}>
+                    <Minus size="20" color="#999" />
+                  </View>
+                </View>
+              )}
+            />
           </View>
         </View>
       ))}
 
-      <View className="statistic">
-        <View
-          style={{ margin: '12px 4px 0 8px' }}
-          className={isCheckedAll ? 'cart__checkbox--checked' : 'cart__checkbox'}
-          onClick={handleCheckedAll}
-        >
-          <View style={{ display: isCheckedAll ? 'block' : 'none' }}>
-            <AtIcon
-              style={{ display: isCheckedAll ? 'block' : 'none' }}
-              prefixClass="fa"
-              value="checked"
-              size="16"
-              color="#fff"
-            />
+      <View className="cart__footer">
+        <View className="cart__footer__checkbox">
+          <View
+            className={isCheckedAll ? 'cart__checkbox cart__checkbox--checked' : 'cart__checkbox'}
+            onClick={handleCheckedAll}
+          >
+            <View style={{ display: isCheckedAll ? 'block' : 'none' }}>
+              <Check
+                style={{ display: isCheckedAll ? 'block' : 'none' }}
+                size="16"
+                color="#fff"
+              />
+            </View>
           </View>
+          <Text className="cart__checkbox--label">全选</Text>
         </View>
-        <Text className="cart__checkbox--label">全选</Text>
         <View className="total">
           合计：<Text>￥{totalMoney}</Text>
         </View>
         <Button
-          className="submit right"
+          className="submit"
           onClick={() => {
             Taro.setStorageSync('goodsList', JSON.stringify(goodsList));
             Taro.navigateTo({

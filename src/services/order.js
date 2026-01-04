@@ -1,5 +1,3 @@
-import { getRequest } from '@/utils/request';
-
 const orderList = {
   success: true,
   status: 200,

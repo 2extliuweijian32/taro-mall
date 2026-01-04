@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
+import { Close2, Plus } from '@nutui/icons-react-taro';
 import { wxToast } from '@/utils/wxApi';
 import './index.scss';
 
@@ -71,22 +71,22 @@ function Upload(props) {
   }, [props.imgList]);
 
   return (
-    <View className="uploadWrap">
+    <View className="upload">
       {Array.isArray(imgList) &&
         imgList.map((item, index) => {
           return (
-            <View className="imgDom left" key={index.toString()}>
+            <View className="thumb left" key={index}>
               <Image src={item} />
-              <View className="cancelIcon" onClick={(e) => handleRemove(e, index)}>
-                <AtIcon value="close-circle" size="12" />
+              <View className="cancel-icon" onClick={(e) => handleRemove(e, index)}>
+                <Close2 size={14} color="#ec1010ff" />
               </View>
             </View>
           );
         })}
 
       {isAddIconShow && (
-        <View className="addDom left" onClick={handleUpload}>
-          <AtIcon value="add" size="30" />
+        <View className="add-icon left" onClick={handleUpload}>
+          <Plus size={30} color="#474545ff" />
         </View>
       )}
     </View>

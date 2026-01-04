@@ -1,24 +1,25 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
-.uploadWrap {
-  .addDom {
-    @include wh(118px, 116px);
-    line-height: 120px;
+.upload {
+  .add-icon {
+    @include wh(118px, 118px);
     box-sizing: border-box;
     border: 2px solid #d8d8d8;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .imgDom {
+  .thumb {
     position: relative;
     @include wh(118px, 116px);
     margin-right: 20px;
-    .cancelIcon {
-      position: absolute;
-      top: -16px;
-      right: -10px;
+    &:last-child {
+      margin-right: 0;
     }
   }
-  .imgDom:last-child {
-    margin-right: 0;
+  .cancel-icon {
+    position: absolute;
+    top: -16px;
+    right: -10px;
   }
 }

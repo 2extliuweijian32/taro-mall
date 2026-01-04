@@ -1,6 +1,7 @@
 import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
+import { ArrowRightSize8 } from '@nutui/icons-react-taro';
 import './index.scss';
 
 function FlashSale(props) {
@@ -17,11 +18,14 @@ function FlashSale(props) {
         }
       >
         <Text>秒杀</Text>
-        <Text className="flash-sale__more">更多</Text>
+        <View className="flash-sale__more">
+          <Text>更多</Text>
+          <ArrowRightSize8 size={12} color="#999" />
+        </View>
       </View>
 
       <View className="flash-sale__banner left">
-        <Image src={data.banner} />
+        { data.banner && <Image src={data.banner} /> }
       </View>
 
       <View className="flash-sale__goods clearfix">

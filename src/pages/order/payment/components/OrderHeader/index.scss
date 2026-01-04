@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .order-header {
   padding: 20px;
@@ -9,8 +9,7 @@
 
 .order-addr {
   padding: 0 0 20px 100px;
-  border-bottom: 2px dashed #ccc;
-  background: url('../../../../../assets/loc.png') no-repeat left;
+  background: url('../../../../../assets/icons/loc.png') no-repeat left;
   -webkit-background-size: 60px 60px;
   background-size: 60px 60px;
   > view:first-child {
@@ -26,15 +25,5 @@
   > view:last-child {
     @include sc(26px, #333);
     padding-top: 8px;
-  }
-}
-
-.order-invoice {
-  @include sc(26px, #333);
-  padding: 20px 0 0 86px;
-  > text {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 20px;
   }
 }

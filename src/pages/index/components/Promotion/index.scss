@@ -1,4 +1,4 @@
-@import '@/styles/base';
+@use '@/styles/base' as *;
 
 .promotion {
   width: 100%;
@@ -15,8 +15,12 @@
   }
   &__more {
     @include sc(28px, #999);
-    padding-right: 12px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    .at-icon {
+      font-size: 36px;
+    }
   }
   &__banner {
     @include wh(100%, 184px);
@@ -29,36 +33,5 @@
   &__goods {
     display: flex;
     justify-content: space-between;
-    &-item {
-      width: 346px;
-    }
-    &-cover {
-      @include wh(346px, 364px);
-      overflow: hidden;
-    }
-    &-info {
-      box-sizing: border-box;
-      padding: 12px 20px;
-    }
-    &-name {
-      @include sc(28px, rgba(51, 51, 51, 1));
-    }
-    &-tag {
-      @include wh(62px, 30px);
-      @include sc(24px, #fff);
-      line-height: 30px;
-      margin-right: 12px;
-      text-align: center;
-      background-color: rgba(232, 14, 39, 1);
-      border-radius: 16px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    &-price {
-      @include sc(32px, rgba(232, 14, 39, 1));
-    }
-    &-sales {
-      @include sc(28px, rgba(153, 153, 153, 1));
-    }
   }
 }

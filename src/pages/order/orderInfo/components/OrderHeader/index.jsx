@@ -1,5 +1,4 @@
 import { View, Text } from '@tarojs/components';
-import { AtIcon } from 'taro-ui';
 import './index.scss';
 
 function OrderHeader(props) {
@@ -18,10 +17,6 @@ function OrderHeader(props) {
           {headerInfo.region}
           {headerInfo.detailAddr}
         </View>
-      </View>
-      <View className="order-invoice">
-        <AtIcon prefixClass="fa" value="files-text-o" size="14" color="#999" />
-        <Text>发票信息：{headerInfo.company}</Text>
       </View>
     </View>
   );

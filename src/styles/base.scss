@@ -1,4 +1,5 @@
-@import './mixin';
+@forward './mixin';
+@use './mixin' as *;
 
 page,
 body {
